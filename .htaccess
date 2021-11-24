@@ -1,8 +1,8 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase https://shahi5472.github.io/home
 
 RewriteCond %{REQUEST_URI} ^/404/$
-RewriteRule ^(.*)$ /
+RewriteRule ^(.*)$ https://shahi5472.github.io/home
 
 RewriteCond %{REQUEST_URI} ^/500/$
-RewriteRule ^(.*)$ /
+RewriteRule ^(.*)$ https://shahi5472.github.io/
