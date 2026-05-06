@@ -1,0 +1,48 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.loader {
+  width: fit-content;
+  font-size: clamp(40px, 8vw, 100px);
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0000;
+  -webkit-text-stroke: 1px #000;
+
+  --g: conic-gradient(#5094F3 0 0) no-repeat text;
+
+  background: var(--g) 0, var(--g) 1ch, var(--g) 2ch, var(--g) 3ch, var(--g) 4ch,
+              var(--g) 5ch, var(--g) 6ch, var(--g) 7ch, var(--g) 8ch,
+              var(--g) 9ch, var(--g) 10ch;
+
+  animation:
+    l17-0 1s linear infinite alternate,
+    l17-1 2s linear infinite;
+}
+
+.loader::before {
+  content: "SHAHI";
+}
+
+@keyframes l17-0 {
+  0%   { background-size: 1ch 0; }
+  100% { background-size: 1ch 100%; }
+}
+
+@keyframes l17-1 {
+  0%,50%    { background-position-y: 100%, 0; }
+  50.01%,to { background-position-y: 0, 100%; }
+}

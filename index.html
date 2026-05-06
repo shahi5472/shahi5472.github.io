@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
-  
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-  
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
     <base href="/">
 
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <meta name="description" content="A new Flutter project.">
+
+    <link rel="stylesheet" href="styles.css">
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,73 +18,105 @@
     <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="preload" type="image/png" href="favicon.png"/>
 
-    <title>S.M. SHAHi</title>
+    <!-- Preload Assets -->
+    <link rel="preload" href="flutter_bootstrap.js" as="script">
+    <link rel="preload" href="assets/assets/images/background.jpg" as="image" type="image/jpg"/>
+    <link rel="preload" href="assets/assets/images/profile.jpeg" as="image" type="image/jpeg"/>
+
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
 
-<!--    <style>-->
-<!--        .container {-->
-<!--            width: 100vw;-->
-<!--            height: 100vh;-->
-<!--            display: flex;-->
-<!--            justify-content: center;-->
-<!--            align-items: center;-->
-<!--        }-->
-<!--        .indicator {-->
-<!--            width: 10vw;-->
-<!--        }-->
-<!--  -->
-<!--    -->
-<!--    </style>-->
+    <title>S. M. Kamal Hussain Shahi | Senior Flutter Developer | Mobile & Backend Engineer</title>
 
-    <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '2977214041';
-  
-    
-    
-    </script>
-    <!-- This script adds the flutter initialization JS code -->
-    <script src="flutter.js" defer></script>
+    <meta name="description"
+          content="S. M. Kamal Hussain Shahi is a Senior Flutter Developer with 6+ years of experience in mobile and backend development. Published 20+ apps including 500K+ downloads app. Expert in Flutter, Dart, Android, Laravel, Firebase, SDUI, Clean Architecture and scalable system design.">
+
+    <meta name="keywords"
+          content="S.m. Kamal Hussain Shahi, Flutter Developer Bangladesh, Mobile App Developer, Flutter Web Expert, Dart Developer, Flutter Architect, Bangladesh Software Engineer">
+
+    <meta name="author" content="S.m. Kamal Hussain Shahi">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title"
+          content="S.m. Kamal Hussain Shahi | Flutter Developer & App Architect">
+    <meta property="og:description"
+          content="Professional Flutter Developer with 6+ years experience. Published 10+ apps including 500K+ downloads app.">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="S.m. Kamal Hussain Shahi | Flutter Developer">
+    <meta name="twitter:description"
+          content="Expert in Flutter, Dart, Clean Architecture & Scalable App Development.">
+
+    <!-- Custom Styles -->
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .indicator {
+            width: 10vw;
+        }
+    </style>
+
+    <meta name="google-site-verification" content="WoFAkfd2Zb8bvf6mw0Ka7kMPH03fOO7MkkV3QFR3cIE"/>
+
+    <meta name="google-site-verification" content="OoGhIZ1CRU5Dl90AQ11T2MjwxBZr44NlCcoqb_w4h7Q"/>
 </head>
-<body>
 <body style="overflow: hidden">
 
-<!--<div id="loading_container" class="container">-->
-<!--    <img src="./icons/dual_ring.gif" alt="loading indicator" class="indicator">-->
-<!--</div>-->
+<!-- Flutter Bootstrap -->
+<script src="flutter_bootstrap.js" async></script>
 
+<div class="loader"></div>
+
+<!-- Register Service Worker -->
 <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  
-
-
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }, function(error) {
+                console.error('Service Worker registration failed:', error);
+            });
+        });
+    }
 </script>
 
-<!--<script>-->
-<!--    window.onload = function () {-->
-<!--        setTimeout(function () {-->
-<!--            var loadingIndicator = document.getElementById("loading_container");-->
-<!--            if (loadingIndicator) {-->
-<!--                loadingIndicator.remove();-->
-<!--            }   -->
-<!--        }, 10000)-->
-<!--    }-->
-
-<!--</script>-->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "S. M. Kamal Hussain Shahi",
+        "url": "https://smshahi.xyz",
+        "jobTitle": "Senior Flutter Developer",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sylhet",
+            "addressCountry": "Bangladesh"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Leading University"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "MyStudyLife Ltd"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/s-m-kamal-hussain-shahi-b121a8179",
+            "https://github.com/shahi5472",
+            "https://play.google.com/store/apps/dev?id=6276368502267210855"
+        ]
+    }
+</script>
 
 </body>
 </html>
