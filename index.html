@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A new Flutter project.">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preload" as="image" type="image/png" href="favicon.png">
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,16 +18,17 @@
     <meta name="apple-mobile-web-app-title" content="S.M. SHAHi">
     <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
-    <link rel="preload" type="image/png" href="favicon.png"/>
-
     <!-- Preload Assets -->
     <link rel="preload" href="flutter_bootstrap.js" as="script">
-    <link rel="preload" href="assets/assets/images/background.jpg" as="image" type="image/jpg"/>
-    <link rel="preload" href="assets/assets/images/profile.jpeg" as="image" type="image/jpeg"/>
+    <link rel="preload" href="assets/assets/images/background.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="assets/assets/images/profile.jpeg" as="image" type="image/jpeg">
 
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Non-blocking Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"></noscript>
+
     <link rel="manifest" href="manifest.json">
 
     <title>S. M. Kamal Hussain Shahi | Senior Flutter Developer | Mobile & Backend Engineer</title>
@@ -52,18 +54,29 @@
     <meta name="twitter:description"
           content="Expert in Flutter, Dart, Clean Architecture & Scalable App Development.">
 
-    <!-- Custom Styles -->
+    <!-- Inlined styles (eliminates render-blocking stylesheet request) -->
     <style>
-        .container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { height: 100vh; display: flex; justify-content: center; align-items: center; background: #fff; }
+        .container { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .indicator { width: 10vw; }
+        .loader {
+            width: fit-content;
+            font-size: clamp(40px, 8vw, 100px);
+            font-family: monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #0000;
+            -webkit-text-stroke: 1px #000;
+            --g: conic-gradient(#5094F3 0 0) no-repeat text;
+            background: var(--g) 0, var(--g) 1ch, var(--g) 2ch, var(--g) 3ch, var(--g) 4ch,
+                        var(--g) 5ch, var(--g) 6ch, var(--g) 7ch, var(--g) 8ch,
+                        var(--g) 9ch, var(--g) 10ch;
+            animation: l17-0 1s linear infinite alternate, l17-1 2s linear infinite;
         }
-        .indicator {
-            width: 10vw;
-        }
+        .loader::before { content: "SHAHI"; }
+        @keyframes l17-0 { 0% { background-size: 1ch 0; } 100% { background-size: 1ch 100%; } }
+        @keyframes l17-1 { 0%, 50% { background-position-y: 100%, 0; } 50.01%, to { background-position-y: 0, 100%; } }
     </style>
 
     <meta name="google-site-verification" content="WoFAkfd2Zb8bvf6mw0Ka7kMPH03fOO7MkkV3QFR3cIE"/>
