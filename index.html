@@ -85,6 +85,16 @@
 </head>
 <body style="overflow: hidden">
 
+<!-- Restore path redirected via 404.html (GitHub Pages SPA workaround) -->
+<script>
+  (function() {
+    var p = new URLSearchParams(window.location.search).get('p');
+    if (p) {
+      window.history.replaceState(null, null, p);
+    }
+  })();
+</script>
+
 <!-- Flutter Bootstrap -->
 <script src="flutter_bootstrap.js" async></script>
 
