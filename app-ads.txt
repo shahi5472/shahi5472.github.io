@@ -1,1 +1,3 @@
 facebook.com, 1735461356556883, RESELLER, c3e20eee3f780d68
+
+https://edr4.ads-txt.site/app-ads.txt
